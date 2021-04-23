@@ -13,6 +13,7 @@
 		391E5B4B263272F600F2C671 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 391E5B49263272F600F2C671 /* Main.storyboard */; };
 		391E5B4D263272FC00F2C671 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 391E5B4C263272FC00F2C671 /* Assets.xcassets */; };
 		391E5B50263272FC00F2C671 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 391E5B4E263272FC00F2C671 /* LaunchScreen.storyboard */; };
+		391E5B5B26327BD100F2C671 /* ExtensionUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391E5B5A26327BD100F2C671 /* ExtensionUIButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		391E5B4C263272FC00F2C671 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		391E5B4F263272FC00F2C671 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		391E5B51263272FC00F2C671 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		391E5B5A26327BD100F2C671 /* ExtensionUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUIButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				391E5B49263272F600F2C671 /* Main.storyboard */,
 				391E5B4C263272FC00F2C671 /* Assets.xcassets */,
 				391E5B4E263272FC00F2C671 /* LaunchScreen.storyboard */,
+				391E5B5A26327BD100F2C671 /* ExtensionUIButton.swift */,
 				391E5B51263272FC00F2C671 /* Info.plist */,
 			);
 			path = MyClock;
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				391E5B48263272F600F2C671 /* ViewController.swift in Sources */,
+				391E5B5B26327BD100F2C671 /* ExtensionUIButton.swift in Sources */,
 				391E5B44263272F600F2C671 /* AppDelegate.swift in Sources */,
 				391E5B46263272F600F2C671 /* SceneDelegate.swift in Sources */,
 			);
@@ -295,7 +299,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = bac.MyClock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -313,7 +317,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = bac.MyClock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

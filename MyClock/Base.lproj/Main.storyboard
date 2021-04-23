@@ -1,24 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyClock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qLv-Xs-mcN">
+                                <rect key="frame" x="32" y="120" width="350" height="394"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="relogio_analogico" translatesAutoresizingMaskIntoConstraints="NO" id="thQ-ns-MRy">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="394"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="thQ-ns-MRy" firstAttribute="leading" secondItem="qLv-Xs-mcN" secondAttribute="leading" id="JZk-S1-wKl"/>
+                                    <constraint firstAttribute="bottom" secondItem="thQ-ns-MRy" secondAttribute="bottom" id="QtF-dq-pXe"/>
+                                    <constraint firstItem="thQ-ns-MRy" firstAttribute="top" secondItem="qLv-Xs-mcN" secondAttribute="top" id="efF-hw-Opu"/>
+                                    <constraint firstAttribute="trailing" secondItem="thQ-ns-MRy" secondAttribute="trailing" id="kEF-bO-FhO"/>
+                                </constraints>
+                            </view>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6pJ-2I-uu7">
+                                <rect key="frame" x="0.0" y="524" width="414" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebf-Rf-3NF">
+                                <rect key="frame" x="82" y="779" width="250" height="38"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="21"/>
+                                <state key="normal" title="Começar">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ebf-Rf-3NF" secondAttribute="bottom" constant="45" id="2YF-iQ-HB9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qLv-Xs-mcN" secondAttribute="trailing" constant="32" id="5Df-Dj-4jW"/>
+                            <constraint firstItem="6pJ-2I-uu7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6cD-gs-POs"/>
+                            <constraint firstItem="qLv-Xs-mcN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="A7g-qH-S4s"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qLv-Xs-mcN" secondAttribute="bottom" constant="348" id="MZO-B7-BTj"/>
+                            <constraint firstItem="6pJ-2I-uu7" firstAttribute="top" secondItem="qLv-Xs-mcN" secondAttribute="bottom" constant="10" id="P9Q-dJ-25U"/>
+                            <constraint firstItem="ebf-Rf-3NF" firstAttribute="top" secondItem="6pJ-2I-uu7" secondAttribute="bottom" constant="39" id="R3Q-eu-kmt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ebf-Rf-3NF" secondAttribute="trailing" constant="82" id="UVV-LI-MJc"/>
+                            <constraint firstItem="ebf-Rf-3NF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="82" id="YA2-BM-azv"/>
+                            <constraint firstItem="qLv-Xs-mcN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="76" id="fsA-VD-3u4"/>
+                            <constraint firstItem="qLv-Xs-mcN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="j0W-YJ-yw0"/>
+                            <constraint firstItem="6pJ-2I-uu7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sVd-ta-OiW"/>
+                            <constraint firstItem="ebf-Rf-3NF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="yih-d4-8Pc"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pickerSeconds" destination="6pJ-2I-uu7" id="ajb-Ws-mEI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="20" y="75"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="relogio_analogico" width="4493" height="3515"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
