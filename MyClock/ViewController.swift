@@ -24,6 +24,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var selected_time = 10
     var timer: Timer!
     
+    @IBOutlet weak var clock_image: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -77,6 +79,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         } else {
             text_timer.text = String(0)
             timer.invalidate()
+        }
+    }
+    
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        if( previousTraitCollection?.horizontalSizeClass == .compact && previousTraitCollection?.verticalSizeClass == .regular){
+            clock_image.image = UIImage(named: "relogio_digital")
+        }else{
+            clock_image.image = UIImage(named: "relogio_analogico")
         }
     }
 
