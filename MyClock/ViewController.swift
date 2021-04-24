@@ -55,9 +55,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         pickerSeconds.isHidden = !pickerSeconds.isHidden
         text_timer.isHidden = !text_timer.isHidden
         
+        
+        
         if(!text_timer.isHidden){
             
             btn_start_timer.setTitle("Cancelar", for: .normal)
+            
+            askPermissionNotification()
             
             selected_time = Int(pickerData[pickerSeconds.selectedRow(inComponent: 0)].prefix(2))!
             text_timer.text = String(selected_time)
@@ -92,6 +96,19 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             clock_image.image = UIImage(named: "relogio_analogico")
         }
     }
-
+    
+    func askPermissionNotification(){
+        
+        let center = UNUserNotificationCenter.current()
+        
+        center.requestAuthorization(options: [.alert, .sound]) {granted, error in
+          if granted {
+            print("Temos permissão")
+          } else {
+            print("Permissão negada")
+          }
+        }
+        
+    }
 }
 
