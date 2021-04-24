@@ -49,7 +49,16 @@
                                         <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="start_timer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A3U-Fm-Aan"/>
+                                </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45B-Fz-l92">
+                                <rect key="frame" x="207" y="622" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -58,6 +67,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qLv-Xs-mcN" secondAttribute="trailing" constant="32" id="5Df-Dj-4jW"/>
                             <constraint firstItem="6pJ-2I-uu7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6cD-gs-POs"/>
                             <constraint firstItem="qLv-Xs-mcN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="A7g-qH-S4s"/>
+                            <constraint firstItem="45B-Fz-l92" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="622" id="FOH-dh-VQS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qLv-Xs-mcN" secondAttribute="bottom" constant="348" id="MZO-B7-BTj"/>
                             <constraint firstItem="6pJ-2I-uu7" firstAttribute="top" secondItem="qLv-Xs-mcN" secondAttribute="bottom" constant="10" id="P9Q-dJ-25U"/>
                             <constraint firstItem="ebf-Rf-3NF" firstAttribute="top" secondItem="6pJ-2I-uu7" secondAttribute="bottom" constant="39" id="R3Q-eu-kmt"/>
@@ -65,12 +75,15 @@
                             <constraint firstItem="ebf-Rf-3NF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="82" id="YA2-BM-azv"/>
                             <constraint firstItem="qLv-Xs-mcN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="76" id="fsA-VD-3u4"/>
                             <constraint firstItem="qLv-Xs-mcN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="j0W-YJ-yw0"/>
+                            <constraint firstItem="45B-Fz-l92" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="nAF-YY-Srb"/>
                             <constraint firstItem="6pJ-2I-uu7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sVd-ta-OiW"/>
                             <constraint firstItem="ebf-Rf-3NF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="yih-d4-8Pc"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btn_start_timer" destination="ebf-Rf-3NF" id="K2a-4S-WVV"/>
                         <outlet property="pickerSeconds" destination="6pJ-2I-uu7" id="ajb-Ws-mEI"/>
+                        <outlet property="text_timer" destination="45B-Fz-l92" id="Mab-Wr-JPu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
