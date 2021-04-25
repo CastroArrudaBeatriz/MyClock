@@ -59,11 +59,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     
+    /**
+            @method:  Click do botão de iniciar timer
+     */
     @IBAction func start_timer(_ sender: Any) {
+       
         pickerSeconds.isHidden = !pickerSeconds.isHidden
         text_timer.isHidden = !text_timer.isHidden
-        
-        
         
         if(!text_timer.isHidden){
             
@@ -87,19 +89,29 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
     }
     
+    /**
+            @method:  Decrementa o tempo selecionado até 0, ao chegar no 0 é iniciada uma animacao, play no som de alarme e o timer é invalidado
+     */
     @objc func runTimer(timer: Timer) {
         if (selected_time > 1) {
+            
             selected_time -= 1
             text_timer.text = String(selected_time)
+            
         } else {
+            
             text_timer.text = String(0)
             playAnimationClock()
             playAudio()
             timer.invalidate()
+            
         }
     }
     
     
+    /**
+            @method: Ao trocar a orientacao da tela este method é disparado e irá trocar a imagem de acordo com a orientacao
+     */
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         
@@ -111,6 +123,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
     }
     
+    /**
+            @method:  Requerir permissao de notificacao ao usuario, caso seja a primeira instalacao do app
+     */
     func askPermissionNotification(){
         center.requestAuthorization(options: [.alert, .sound]) { granted, error in
             if granted {
@@ -121,24 +136,37 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
+    
+    /**
+            @method:  Montar e agendar notificacao do alarme
+     */
     func scheduleNotification(id: Int, timeInterval: TimeInterval, title: String, body: String) {
+        
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = body
         content.sound = UNNotificationSound.default
 
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
+        
         let request = UNNotificationRequest(
             identifier: "\(id)",
             content: content,
             trigger: trigger)
+        
         center.add(request)
     }
     
+    /**
+            @method:  Cancelar o agendamento da notificacao do alarme
+     */
     func removeNotification(id: Int) {
       center.removePendingNotificationRequests(withIdentifiers: ["\(id)"])
     }
     
+    /**
+            @method:  animacao da view que contem a imagem do relogio
+     */
     func playAnimationClock(){
         let animation = CAKeyframeAnimation()
         animation.keyPath = "position.x"
@@ -151,6 +179,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         clock_view.layer.add(animation, forKey: "shake")
     }
     
+    /**
+            @method:  tocar audio de alarme usando AVAudioPlayer
+     */
     func playAudio(){
         let path = Bundle.main.path(forResource: "alarm.mp3", ofType:nil)!
         let url = URL(fileURLWithPath: path)
