@@ -27,6 +27,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBOutlet weak var clock_image: UIImageView!
     
+    @IBOutlet weak var clock_view: UIView!
+    
     let center = UNUserNotificationCenter.current()
     
     override func viewDidLoad() {
@@ -88,6 +90,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             text_timer.text = String(selected_time)
         } else {
             text_timer.text = String(0)
+            playAnimationClock()
             timer.invalidate()
         }
     }
@@ -130,6 +133,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func removeNotification(id: Int) {
       center.removePendingNotificationRequests(withIdentifiers: ["\(id)"])
+    }
+    
+    func playAnimationClock(){
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = "position.x"
+        animation.values = [0, 10, -10, 10, -5, 5, -5, 0 ]
+        animation.keyTimes = [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1]
+        animation.duration = 0.4
+        animation.isAdditive = true
+
+        clock_view.layer.add(animation, forKey: "shake")
     }
    
 }

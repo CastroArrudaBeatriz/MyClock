@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="landscape" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,14 +13,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyClock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qLv-Xs-mcN">
-                                <rect key="frame" x="30" y="30" width="313" height="300"/>
+                                <rect key="frame" x="32" y="120" width="350" height="394"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="relogio_analogico" translatesAutoresizingMaskIntoConstraints="NO" id="thQ-ns-MRy">
-                                        <rect key="frame" x="0.0" y="0.0" width="313" height="300"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="394"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -59,10 +59,10 @@
                                 </variation>
                             </view>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6pJ-2I-uu7">
-                                <rect key="frame" x="337" y="100" width="320" height="162"/>
+                                <rect key="frame" x="0.0" y="524" width="414" height="216"/>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebf-Rf-3NF">
-                                <rect key="frame" x="337" y="280" width="320" height="38"/>
+                                <rect key="frame" x="107" y="779" width="200" height="38"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="5sX-xy-m2X"/>
@@ -88,8 +88,8 @@
                                     <action selector="start_timer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A3U-Fm-Aan"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45B-Fz-l92">
-                                <rect key="frame" x="187.5" y="169.5" width="0.0" height="0.0"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45B-Fz-l92">
+                                <rect key="frame" x="207" y="606" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -294,6 +294,7 @@
                     <connections>
                         <outlet property="btn_start_timer" destination="ebf-Rf-3NF" id="K2a-4S-WVV"/>
                         <outlet property="clock_image" destination="thQ-ns-MRy" id="OMD-QZ-saO"/>
+                        <outlet property="clock_view" destination="qLv-Xs-mcN" id="Rau-F7-Vkq"/>
                         <outlet property="pickerSeconds" destination="6pJ-2I-uu7" id="ajb-Ws-mEI"/>
                         <outlet property="text_timer" destination="45B-Fz-l92" id="Mab-Wr-JPu"/>
                     </connections>
