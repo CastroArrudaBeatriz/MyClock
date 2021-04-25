@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var pickerSeconds: UIPickerView!
@@ -25,6 +26,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var timer: Timer!
     
     @IBOutlet weak var clock_image: UIImageView!
+    
+    let center = UNUserNotificationCenter.current()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,14 +65,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             btn_start_timer.setTitle("Cancelar", for: .normal)
             
             askPermissionNotification()
-            
             selected_time = Int(pickerData[pickerSeconds.selectedRow(inComponent: 0)].prefix(2))!
             text_timer.text = String(selected_time)
-            
+           
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(runTimer), userInfo: nil, repeats: true)
+            
+            scheduleNotification(id: 1, timeInterval: Double(selected_time), title: "Alarme", body: "O seu alarme tocou!")
+            
             
         }else {
             btn_start_timer.setTitle("Começar", for: .normal)
+            removeNotification(id: 1)
             timer.invalidate()
         }
         
@@ -90,25 +96,41 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         
-        if( previousTraitCollection?.horizontalSizeClass == .compact && previousTraitCollection?.verticalSizeClass == .regular){
+        if UIDevice.current.orientation.isLandscape {
             clock_image.image = UIImage(named: "relogio_digital")
-        }else{
+        } else {
             clock_image.image = UIImage(named: "relogio_analogico")
         }
+        
     }
     
     func askPermissionNotification(){
-        
-        let center = UNUserNotificationCenter.current()
-        
-        center.requestAuthorization(options: [.alert, .sound]) {granted, error in
-          if granted {
-            print("Temos permissão")
-          } else {
-            print("Permissão negada")
-          }
+        center.requestAuthorization(options: [.alert, .sound]) { granted, error in
+            if granted {
+                print("Temos permissão")
+            } else {
+                print("Permissão negada")
+            }
         }
-        
     }
+    
+    func scheduleNotification(id: Int, timeInterval: TimeInterval, title: String, body: String) {
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        content.sound = UNNotificationSound.default
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
+        let request = UNNotificationRequest(
+            identifier: "\(id)",
+            content: content,
+            trigger: trigger)
+        center.add(request)
+    }
+    
+    func removeNotification(id: Int) {
+      center.removePendingNotificationRequests(withIdentifiers: ["\(id)"])
+    }
+   
 }
 
