@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -30,6 +31,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var clock_view: UIView!
     
     let center = UNUserNotificationCenter.current()
+    
+    var playerAVAudio: AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,6 +94,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         } else {
             text_timer.text = String(0)
             playAnimationClock()
+            playAudio()
             timer.invalidate()
         }
     }
@@ -141,9 +145,22 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         animation.values = [0, 10, -10, 10, -5, 5, -5, 0 ]
         animation.keyTimes = [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1]
         animation.duration = 0.4
+        animation.repeatCount = 8
         animation.isAdditive = true
 
         clock_view.layer.add(animation, forKey: "shake")
+    }
+    
+    func playAudio(){
+        let path = Bundle.main.path(forResource: "alarm.mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            playerAVAudio = try AVAudioPlayer(contentsOf: url)
+            playerAVAudio?.play()
+        } catch {
+            
+        }
     }
    
 }

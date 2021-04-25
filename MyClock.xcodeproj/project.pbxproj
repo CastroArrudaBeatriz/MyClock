@@ -14,6 +14,7 @@
 		391E5B4D263272FC00F2C671 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 391E5B4C263272FC00F2C671 /* Assets.xcassets */; };
 		391E5B50263272FC00F2C671 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 391E5B4E263272FC00F2C671 /* LaunchScreen.storyboard */; };
 		391E5B5B26327BD100F2C671 /* ExtensionUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391E5B5A26327BD100F2C671 /* ExtensionUIButton.swift */; };
+		399A3C7C26353AD000C92BE1 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 399A3C7B26353ACF00C92BE1 /* alarm.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		391E5B4F263272FC00F2C671 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		391E5B51263272FC00F2C671 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		391E5B5A26327BD100F2C671 /* ExtensionUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUIButton.swift; sourceTree = "<group>"; };
+		399A3C7B26353ACF00C92BE1 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		391E5B42263272F600F2C671 /* MyClock */ = {
 			isa = PBXGroup;
 			children = (
+				399A3C7B26353ACF00C92BE1 /* alarm.mp3 */,
 				391E5B43263272F600F2C671 /* AppDelegate.swift */,
 				391E5B45263272F600F2C671 /* SceneDelegate.swift */,
 				391E5B47263272F600F2C671 /* ViewController.swift */,
@@ -127,6 +130,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				399A3C7C26353AD000C92BE1 /* alarm.mp3 in Resources */,
 				391E5B50263272FC00F2C671 /* LaunchScreen.storyboard in Resources */,
 				391E5B4D263272FC00F2C671 /* Assets.xcassets in Resources */,
 				391E5B4B263272F600F2C671 /* Main.storyboard in Resources */,
