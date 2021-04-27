@@ -52,7 +52,7 @@ class OnboardingViewController: UIViewController {
     }
 
     private func addInitialPage() {
-        let initialPage = IntroductionViewController(with: pages[0])
+        let initialPage = DefaultPageViewController(with: pages[0])
         pageController.setViewControllers([initialPage], direction: .forward, animated: false, completion: nil)
     }
 
@@ -60,25 +60,25 @@ class OnboardingViewController: UIViewController {
 
 extension OnboardingViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let index = (viewController as? IntroductionViewController)?.page.index,
+        guard let index = (viewController as? DefaultPageViewController)?.page.index,
               index > 0 else {
             return nil
         }
 
         currentIndex = index - 1
 
-        return IntroductionViewController(with: pages[currentIndex])
+        return DefaultPageViewController(with: pages[currentIndex])
     }
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let index = (viewController as? IntroductionViewController)?.page.index,
+        guard let index = (viewController as? DefaultPageViewController)?.page.index,
               index < pages.count - 1 else {
             return nil
         }
 
         currentIndex = index + 1
 
-        return IntroductionViewController(with: pages[currentIndex])
+        return DefaultPageViewController(with: pages[currentIndex])
     }
 
     func presentationCount(for pageViewController: UIPageViewController) -> Int {

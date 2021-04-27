@@ -16,7 +16,7 @@
 		391E5B5B26327BD100F2C671 /* ExtensionUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391E5B5A26327BD100F2C671 /* ExtensionUIButton.swift */; };
 		398B074F2636628100EA75D7 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398B074E2636628100EA75D7 /* OnboardingViewController.swift */; };
 		398B07532636634B00EA75D7 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398B07522636634B00EA75D7 /* Page.swift */; };
-		398B0756263664C400EA75D7 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398B0755263664C400EA75D7 /* IntroductionViewController.swift */; };
+		398B0756263664C400EA75D7 /* DefaultPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398B0755263664C400EA75D7 /* DefaultPageViewController.swift */; };
 		399A3C7C26353AD000C92BE1 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 399A3C7B26353ACF00C92BE1 /* alarm.mp3 */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +32,7 @@
 		391E5B5A26327BD100F2C671 /* ExtensionUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUIButton.swift; sourceTree = "<group>"; };
 		398B074E2636628100EA75D7 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		398B07522636634B00EA75D7 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
-		398B0755263664C400EA75D7 /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
+		398B0755263664C400EA75D7 /* DefaultPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPageViewController.swift; sourceTree = "<group>"; };
 		399A3C7B26353ACF00C92BE1 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,17 +69,25 @@
 				399A3C7B26353ACF00C92BE1 /* alarm.mp3 */,
 				391E5B43263272F600F2C671 /* AppDelegate.swift */,
 				391E5B45263272F600F2C671 /* SceneDelegate.swift */,
-				391E5B47263272F600F2C671 /* ViewController.swift */,
+				39A6985726379D9E009C8196 /* controller */,
 				391E5B49263272F600F2C671 /* Main.storyboard */,
 				391E5B4C263272FC00F2C671 /* Assets.xcassets */,
 				391E5B4E263272FC00F2C671 /* LaunchScreen.storyboard */,
 				391E5B5A26327BD100F2C671 /* ExtensionUIButton.swift */,
 				391E5B51263272FC00F2C671 /* Info.plist */,
-				398B074E2636628100EA75D7 /* OnboardingViewController.swift */,
 				398B07522636634B00EA75D7 /* Page.swift */,
-				398B0755263664C400EA75D7 /* IntroductionViewController.swift */,
 			);
 			path = MyClock;
+			sourceTree = "<group>";
+		};
+		39A6985726379D9E009C8196 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				391E5B47263272F600F2C671 /* ViewController.swift */,
+				398B074E2636628100EA75D7 /* OnboardingViewController.swift */,
+				398B0755263664C400EA75D7 /* DefaultPageViewController.swift */,
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,7 +167,7 @@
 				398B074F2636628100EA75D7 /* OnboardingViewController.swift in Sources */,
 				391E5B44263272F600F2C671 /* AppDelegate.swift in Sources */,
 				391E5B46263272F600F2C671 /* SceneDelegate.swift in Sources */,
-				398B0756263664C400EA75D7 /* IntroductionViewController.swift in Sources */,
+				398B0756263664C400EA75D7 /* DefaultPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

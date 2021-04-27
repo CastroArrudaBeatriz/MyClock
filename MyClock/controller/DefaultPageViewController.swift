@@ -7,7 +7,7 @@
 
 import UIKit
 
-class IntroductionViewController: UIViewController {
+class DefaultPageViewController: UIViewController {
     var page: Page
 
     lazy var titleLabel: UILabel = {
